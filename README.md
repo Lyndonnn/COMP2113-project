@@ -1,6 +1,6 @@
 # COMP2113-Group-project
 
-Group members: Tang Zixuan (3035449645); Wang Bingzhang ()
+Group members: Tang Zixuan (3035449645); Wang Bingzhang (3035835272)
 
 ## Game description：
 
@@ -23,6 +23,7 @@ options and win the war against viruses.
 3. Dynamic memory management:
    - applied when building the linked list
 4. File input/output:
+   - input the file contains the leaderboard
    - input some other header files
    - create a ranking list based on the number of turns, budget spent and output to another file
 5. Program codes in multiple file
