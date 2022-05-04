@@ -282,7 +282,7 @@ int main() {
 		int action = actionMenu(day);
 		if (value.infection <= 0 || value.death <= 0) {
 			// success
-			cout << value.death << value.infection << endl;
+			//cout << value.death << value.infection << endl;
 			cout << "YOU HAVE BEAT THE COVID !!!" << endl;
 			cout << "----------------------------------------------------------------------------------------------" << endl;
 			exit(1);
