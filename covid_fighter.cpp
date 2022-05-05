@@ -4,6 +4,8 @@
 #include <time.h>
 #include <fstream>
 #include <iomanip>
+#include "background_input.h"
+#include "data_output.h"
 
 using namespace std;
 
@@ -351,24 +353,6 @@ void randomEvent(Day &info) {
 
 }
 
-// read from external file to display the background informations
-void background() {
-	cout << "----------------------------------------------------------------------------------------------" << endl;
-	cout << "You are the leader of WHO, see whether you can beat the COVID. Here is the information" << endl;
-	cout << "----------------------------------------------------------------------------------------------" << endl;
-	ifstream fin;
-	fin.open("information.txt");
-	if ( fin.fail() ) {
-		cout << "Error in file opening!"
-		     << endl;
-	}
-	string line;
-	while (getline(fin, line)) {
-		cout << line << endl;
-	}
-	fin.close();
-
-}
 
 
 int main() {
@@ -445,32 +429,7 @@ int main() {
 		}
 	}
 
-	// output daily information to file
-	ofstream fout;
-	fout.open("dailyInfo.txt");
-
-	if (fout.fail()) {
-		cout << "Error in file opening!" << endl;
-		exit(1);
-	}
-
-	int count = 0;
-	Day *traverse = head;
-	// print column names
-	fout << "Day" << "   " << "Funding" << "   " << "Support Rate"
-	     << "   " << "Infection Rate" << "   " << "Death Rate" << endl;
-	// print daily information sequentially
-	while (traverse->next != NULL) {
-		fout << setw(3) << count << "   " << setw(8) << traverse->fund << "   "
-		     << setw(15) << traverse->support << "   " << setw(17) <<
-		     traverse->infection << "   " << setw(19) << traverse->death << endl;
-		count++;
-		traverse = traverse->next;
-	}
-	fout << setw(3) << count << "   " << setw(8) << traverse->fund << "   "
-	     << setw(15) << traverse->support << "   " << setw(17) <<
-	     traverse->infection << "   " << setw(19) << traverse->death << endl;
-	fout.close();
+	dataoutput();
 
 	return 0;
 }
