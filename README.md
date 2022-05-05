@@ -5,11 +5,23 @@ Group members: Tang Zixuan (3035449645); Wang Bingzhang (3035835272)
 ## Game description：
 
 This game is based on the Coronavirus outbreak in the world today. In this game, players will play the role of the leader of the World Health Organization (WHO). Players 
-need to make the best choice according to their own ideas to reduce the infection rate and death rate of Coronavirus, and finally save the world. The basic rule of the 
-game is each turn player have to choose to take a measure to combat COVID-19, which changes your supporting rate, your budget, and the rate of infection and death rate of the 
-virus. There are also 'breaking news' that may be triggered each turn, and how the player make choices accordingly will further affect the aforementioned four statistics, either in a favorable or disadvantageous manner. The player wins the game if (1) the infection rate drops to zero, or (2) the death rate drops to zero. The player loses the 
-game if (1) the supporting rate becomes zero, or (2) the budget becomes zero, or (3) the number of turns reaches 100. In addition, choosing the inethical measure 'Spread fake news to exaggerate your contributions' may also lead to a failure in the future (This is unknown to the palyer). So, optimize your 
-choices and win the war against viruses.
+need to make the best choice according to their own ideas to reduce the infection rate and death rate of Coronavirus, and finally save the world.
+
+Starting status:
+Initial funding: 100billion
+Initial support rate: 100%
+Initial Infection rates: 50%
+Initial death rates: 1%
+
+Basic rules:  
+In each turn, the player have to choose to take a measure to combat COVID-19, which changes your supporting rate, your budget, and the rate of infection and death rate of the 
+virus. There are also 'breaking news' that may be triggered each turn, and how the player make choices accordingly will further affect the aforementioned four statistics, either in a favorable or disadvantageous manner. 
+
+The player wins the game if (1) the infection rate drops to zero, or (2) the death rate drops to zero. The player loses the 
+game if (1) the supporting rate becomes zero, or (2) the budget becomes zero, or (3) the number of turns reaches 100. In addition, choosing the inethical measure 'Spread fake news to exaggerate your contributions' may also lead to a failure in the future (This is unknown to the palyer). 
+
+So, optimize your 
+choices and win the war against viruses!
 
 ## Features to be implemented
 1. Print the up-to-date status
