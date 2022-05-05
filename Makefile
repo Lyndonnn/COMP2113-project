@@ -9,5 +9,5 @@ covid_fighter.o: covid_fighter.cpp data_output.h background_input.h
 covid_fighter: covid_fighter.o background_input.o data_output.o
 	g++ $(FLAGS) covid_fighter.o background_input.o data_output.o -o covid_fighter
 clean:
-	rm -f covid_fighter.o background_input.o data_output.o -o covid_fighter
+	rm -f covid_fighter.o background_input.o data_output.o covid_fighter
 .PHONY: clean
