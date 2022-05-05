@@ -10,3 +10,4 @@ covid_fighter: covid_fighter.o background_input.o data_output.o
 	g++ $(FLAGS) covid_fighter.o background_input.o data_output.o -o covid_fighter
 clean:
 	rm -f covid_fighter.o background_input.o data_output.o -o covid_fighter
+.PHONY: clean
