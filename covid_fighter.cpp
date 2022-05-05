@@ -5,44 +5,59 @@
 #include <fstream>
 #include <iomanip>
 
-#include "2.h"
 using namespace std;
 
+struct Day {
+	int fund;
+	int support;
+	int infection;
+	double death;
+	int potential;
+	bool flag;
+	Day *next;
+};
 
 
 // print the status in the previous day
 void printDay(Day &head) {
 	cout << endl;
-	cout << "******" << "Total funding (in $): " << head.fund << "******" << endl;
-	cout << "******" << "Support rate (in %): " << head.support << "******" << endl;
-	cout << "******" << "Infection rate (in %): " << head.infection << "******" << endl;
-	cout << "******" << "Death rate (in %): " << head.death  << "******" << endl;
+	cout << "******" << " Total funding (in $billion): " << setw(3) << head.fund << " ******" << endl;
+	cout << "******" << " Support rate (in %): " << setw(11) << head.support << " ******" << endl;
+	cout << "******" << " Infection rate (in %): " << setw(9) << head.infection << " ******" << endl;
+	cout << "******" << " Death rate (in %): " << setw(13) << head.death  << " ******" << endl;
 	cout << endl;
 }
 
-// add a new daily status
-void addDay(Day *head, int fund, int support, int infection, int death) {
+// add a new daily status to the tail of the linked list
+void addDay(Day *&head, Day *&tail, Day &info) {
 	Day *p = new Day;
-	p -> fund = fund;
-	p -> support = support;
-	p -> infection = infection;
-	p -> death = death;
-	p -> next = head;
-	head = p;
+	p -> fund = info.fund;
+	p -> support = info.support;
+	p -> infection = info.infection;
+	p -> death = info.death;
+	p -> potential = info.potential;
+	p -> flag = info.flag;
+	p -> next = NULL;
+	if (head == NULL) {
+		head = p;
+		tail = p;
+	} else {
+		tail->next = p;
+		tail = p;
+	}
 }
 
-// display all the avalaible choices
+// display all three actions
 // obtain the action chosen from the player
 int actionMenu(int day) {
 	int action;
 	// print action menu
 	cout << "********************************" << endl;
-	cout << "************DAY " << setw(16) << setfill('*') << left << day << endl;
+	cout << "************ DAY " << setw(2) << day << " ************" << endl;
 	cout << "********************************" << endl;
-	// ++++++++++++++++ add choices here ++++++++++++++++++++++++
 	cout << "Please choose your action: " << endl;
 	cout << "----------------------------------------------------------------------------------------------" << endl;
-	cout << "Enter 1 --------> Measures" << endl;
+	cout << "Enter 1 --------> Measures" << endl; // select the measure for the current day
 	cout << "Enter 2 --------> Show Status" << endl;
 	cout << "Enter 3 --------> Show Background Information" << endl;
 	cout << "Enter 0 --------> Quit (your current status will not be recorded)" << endl;
@@ -53,16 +68,19 @@ int actionMenu(int day) {
 	return action;
 }
 
-// generate a random number
-int random() {
+// generate a random number from 1 to 7
+int randomNumber() {
 	int a;
 	srand((unsigned)time(NULL));
 	a = rand() % 7 + 1;
-	return  a;
+	return a;
 }
 
-int chooseaction(Day &info) {
+// print all seven measures that can be taken
+// obtain the measure chosen by the player
+int chooseAction(Day &info) {
 	int a, b;
+	// print the measures
 	cout << "Please choose the action you want to take" << endl;
 	cout << "----------------------------------------------------------------------------------------------" << endl;
 	cout << "Enter 1 ---------> Tightening quarantine policy" << endl;
@@ -71,25 +89,40 @@ int chooseaction(Day &info) {
 	cout << "Enter 4 ---------> Develop up-to-date vaccine" << endl;
 	cout << "Enter 5 ---------> Spread fake news to exaggerate your contributions" << endl;
 	cout << "Enter 6 ---------> Raise donations worldwide" << endl;
-	cout << "Enter 7 ---------> Provide additional assistance will be given to poor areas" << endl;
+	cout << "Enter 7 ---------> Provide additional assistance to poor areas" << endl;
 	cout << "----------------------------------------------------------------------------------------------" << endl;
 	cin >> a;
+	cout << "----------------------------------------------------------------------------------------------" << endl;
+	// update funding, support, infection rate, and death rate based on the measure
 	switch (a) {
 		case 1:
 			cout << "Enter 1 ---> Normal quarantine (accept flight, ship but need 14 days quarantine)" << endl;
 			cout << "Enter 2 ---> Absolute quarantine (no flight, ship, cars enter the country) " << endl;
 			cout << "----------------------------------------------------------------------------------------------" << endl;
 			cin >> b;
+			cout << "----------------------------------------------------------------------------------------------" << endl;
 			if (b == 1) {
 				info.support -= 10;
 				info.fund -= 10;
 				info.infection -= 5;
+				if (info.infection < 0) {
+					info.infection = 0;
+				}
+				if (info.support < 0) {
+					info.support = 0;
+				}
 				return 10;
 			}
 			if (b == 2) {
 				info.support -= 30;
 				info.fund -= 20;
 				info.infection -= 20;
+				if (info.infection < 0) {
+					info.infection = 0;
+				}
+				if (info.support < 0) {
+					info.support = 0;
+				}
 				return 11;
 			} else {
 				cout << "Operation invalid, you waste one day" << endl;
@@ -101,6 +134,12 @@ int chooseaction(Day &info) {
 			info.fund -= 20;
 			info.infection -= 10;
 			info.death -= 0.1;
+			if (info.infection < 0) {
+				info.infection = 0;
+			}
+			if (info.death < 0) {
+				info.death = 0;
+			}
 			if (info.support > 100) {
 				info.support = 100;
 			}
@@ -113,6 +152,9 @@ int chooseaction(Day &info) {
 			if (info.support > 100) {
 				info.support = 100;
 			}
+			if (info.death < 0) {
+				info.death = 0;
+			}
 			return 3;
 			break;
 		case 4:
@@ -120,6 +162,12 @@ int chooseaction(Day &info) {
 			info.support += 10;
 			info.infection -= 20;
 			info.death -= 0.1;
+			if (info.infection < 0) {
+				info.infection = 0;
+			}
+			if (info.death < 0) {
+				info.death = 0;
+			}
 			if (info.support > 100) {
 				info.support = 100;
 			}
@@ -132,17 +180,26 @@ int chooseaction(Day &info) {
 			if (info.support > 100) {
 				info.support = 100;
 			}
+			if (info.infection > 100) {
+				info.infection = 100;
+			}
 			return 5;
 			break;
 		case 6:
 			info.fund += 20;
 			info.support -= 20;
+			if (info.support < 0) {
+				info.support = 0;
+			}
 			return 6;
 			break;
 		case 7:
 			info.support += 10;
 			info.fund -= 20;
 			info.death -= 0.3;
+			if (info.death < 0) {
+				info.death = 0;
+			}
 			if (info.support > 100) {
 				info.support = 100;
 			}
@@ -157,9 +214,10 @@ int chooseaction(Day &info) {
 }
 
 // generate a random event
-void randomevent(Day &info) {
+void randomEvent(Day &info) {
 	int ran, temp;
-	ran = random();
+	// generate a random event
+	ran = randomNumber();
 	switch (ran) {
 		case 1:
 			cout << "Breaking News: The holiday is coming and people are eager to travel." << endl;
@@ -185,28 +243,47 @@ void randomevent(Day &info) {
 			cout << "News: The epidemic prevention work is progressing step by step." << endl;
 			cout << "----------------------------------------------------------------------------------------------" << endl;
 	}
-	temp = chooseaction(info);
+	// read player's chosen measure
+	temp = chooseAction(info);
+	// further adjustments on funding, support, infection rate, and death rate
+	// in general, acting in response to the breaking news (if triggered) results in more favorable situation
 	switch (ran) {
 		case 1:
 			if (temp == 10 || temp == 11) {
 				info.infection -= 5;
+				if (info.infection < 0) {
+					info.infection = 0;
+				}
 				cout << "Long periods of quarantine have discouraged people from travelling" << endl;
 				cout << "----------------------------------------------------------------------------------------------" << endl;
 			} else {
 				info.infection += 20;
+				if (info.infection > 100) {
+					info.infection = 100;
+				}
 				cout << "The mass movement led to the outbreak of epidemic" << endl;
 				cout << "----------------------------------------------------------------------------------------------" << endl;
 			}
 			break;
 		case 2:
-			if (temp == 3 || temp == 7) {
+			if (temp == 3 || temp == 7 || temp == 2) {
 				info.death -= 0.1;
 				info.infection -= 10;
+				if (info.death < 0) {
+					info.death = 0;
+				}
+				if (info.infection < 0) {
+					info.infection = 0;
+				}
+
 				cout << "Medical care in poor areas has been improved" << endl;
 				cout << "----------------------------------------------------------------------------------------------" << endl;
 			} else {
 				info.death += 1;
 				info.infection += 10;
+				if (info.infection > 100) {
+					info.infection = 100;
+				}
 				cout << "Both mortality and infection rates have increased dramatically due to cluster of cases" << endl;
 				cout << "----------------------------------------------------------------------------------------------" << endl;
 			}
@@ -215,24 +292,42 @@ void randomevent(Day &info) {
 			if (temp == 4) {
 				info.death -= 0.2;
 				info.infection -= 10;
+				if (info.death < 0) {
+					info.death = 0;
+				}
+				if (info.infection < 0) {
+					info.infection = 0;
+				}
 				cout << "The newly developed vaccine is very effective" << endl;
 				cout << "----------------------------------------------------------------------------------------------" << endl;
 			} else {
 				info.infection += 10;
 				info.death += 1;
+				if (info.infection > 100) {
+					info.infection = 100;
+				}
 				cout << "The mutated virus cannot be dealt with by existing medical measures" << endl;
 				cout << "----------------------------------------------------------------------------------------------" << endl;
 			}
 			break;
 		case 4:
-			if (temp == 2) {
+			if (temp == 2 || temp == 7) {
 				info.infection -= 10;
 				info.death -= 0.1;
+				if (info.infection < 0) {
+					info.infection = 0;
+				}
+				if (info.death < 0) {
+					info.death = 0;
+				}
 				cout << "Free supplies have helped the poor areas a lot" << endl;
 				cout << "----------------------------------------------------------------------------------------------" << endl;
 			} else {
 				info.death += 1;
 				info.infection += 20;
+				if (info.infection > 100) {
+					info.infection = 100;
+				}
 				cout << "Health systems in some poor countries are about to collapse" << endl;
 				cout << "----------------------------------------------------------------------------------------------" << endl;
 			}
@@ -256,20 +351,30 @@ void randomevent(Day &info) {
 
 }
 
+// read from external file to display the background informations
 void background() {
-	cout << "You are the leader of WHO, see whether you can beat the COVID" << endl;
 	cout << "----------------------------------------------------------------------------------------------" << endl;
+	cout << "You are the leader of WHO, see whether you can beat the COVID. Here is the information" << endl;
+	cout << "----------------------------------------------------------------------------------------------" << endl;
+	ifstream fin;
+	fin.open("information.txt");
+	if ( fin.fail() ) {
+		cout << "Error in file opening!"
+		     << endl;
+	}
+	string line;
+	while (getline(fin, line)) {
+		cout << line << endl;
+	}
+	fin.close();
+
 }
 
-// more functions to be considered...
-int main() {
-	//Day *head = NULL;
 
+int main() {
+	Day *head = NULL;
+	Day *tail = NULL;
 	int day = 0;
-	int counter = 0;
-	int count = 0;
-	int check[100];
-// basic information
 	Day value;
 	value.fund = 100;
 	value.support = 100;
@@ -277,37 +382,24 @@ int main() {
 	value.death = 1;
 	value.potential = 0;
 	value.flag = false;
-	//int action = actionMenu(day);
+	addDay(head, tail, value); // add initial status to the linked list
 	while (day < 100) {
 		int action = actionMenu(day);
-		if (value.infection <= 0 || value.death <= 0) {
-			// success
-			//cout << value.death << value.infection << endl;
-			cout << "YOU HAVE BEAT THE COVID !!!" << endl;
-			cout << "----------------------------------------------------------------------------------------------" << endl;
-			exit(1);
-			break;
-		}
-		if (value.support <= 0 || value.infection >= 100 || value.fund <= 0 || value.death >= 5) {
-			// lose
-			cout << "You Fail To Beat The COVID" << endl;
-			cout << "----------------------------------------------------------------------------------------------" << endl;
-			exit(1);
-		}
 
-		// update funding, support, infection, and death according to the action chosen
 		switch (action) {
-			case 1:
+			case 1: // if the player want to take a measure for that day
 				cout << "----------------------------------------------------------------------------------------------" << endl;
-				randomevent(value);
+				randomEvent(value);
+				addDay(head, tail, value); // add daily infomation to the linked list
 				cout << "----------------------------------------------------------------------------------------------" << endl;
+				day++;
 				break;
-			case 2:
+			case 2: // if the player want to know the current status
 				cout << "----------------------------------------------------------------------------------------------" << endl;
 				printDay(value);
 				cout << "----------------------------------------------------------------------------------------------" << endl;
 				break;
-			case 3:
+			case 3: // if the player want to search for background information
 				cout << "----------------------------------------------------------------------------------------------" << endl;
 				background();
 				cout << "----------------------------------------------------------------------------------------------" << endl;
@@ -318,9 +410,29 @@ int main() {
 				cout << "You entered a wrong action" << endl;
 				cout << "You've wasted a day" << endl;
 				cout << "----------------------------------------------------------------------------------------------" << endl;
+				day++;
 
 
 		}
+		if (day >= 100) {
+			cout << "----------------------------------------------------------------------------------------------" << endl;
+			cout << "You fail to beat the COVID as you spend too much time." << endl;
+			cout << "----------------------------------------------------------------------------------------------" << endl;
+		}
+		// success condition
+		if (value.infection <= 0 || value.death <= 0) {
+			cout << "YOU HAVE BEAT THE COVID !!!" << endl;
+			cout << "----------------------------------------------------------------------------------------------" << endl;
+			break;
+		}
+		// lose condition 1
+		if (value.support <= 0 || value.infection >= 100 || value.fund <= 0 || value.death >= 5) {
+			cout << "----------------------------------------------------------------------------------------------" << endl;
+			cout << "You Fail To Beat The COVID" << endl;
+			cout << "----------------------------------------------------------------------------------------------" << endl;
+			break;
+		}
+		// lose condition 2: too much fake news produced
 		if (value.potential >= 100) {
 			cout << "You get caught spreading fake news, people lose trust in you" << endl;
 			cout << "----------------------------------------------------------------------------------------------" << endl;
@@ -331,9 +443,35 @@ int main() {
 			value.potential += 20;
 
 		}
-		day++; // add the day by 1
-		//action = actionMenu(day);
-
 	}
+
+	// output daily information to file
+	ofstream fout;
+	fout.open("dailyInfo.txt");
+
+	if (fout.fail()) {
+		cout << "Error in file opening!" << endl;
+		exit(1);
+	}
+
+	int count = 0;
+	Day *traverse = head;
+	// print column names
+	fout << "Day" << "   " << "Funding" << "   " << "Support Rate"
+	     << "   " << "Infection Rate" << "   " << "Death Rate" << endl;
+	// print daily information sequentially
+	while (traverse->next != NULL) {
+		fout << setw(3) << count << "   " << setw(8) << traverse->fund << "   "
+		     << setw(15) << traverse->support << "   " << setw(17) <<
+		     traverse->infection << "   " << setw(19) << traverse->death << endl;
+		count++;
+		traverse = traverse->next;
+	}
+	fout << setw(3) << count << "   " << setw(8) << traverse->fund << "   "
+	     << setw(15) << traverse->support << "   " << setw(17) <<
+	     traverse->infection << "   " << setw(19) << traverse->death << endl;
+	fout.close();
+
 	return 0;
 }
+
