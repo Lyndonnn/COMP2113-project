@@ -7,11 +7,11 @@ Group members: Tang Zixuan (3035449645); Wang Bingzhang (3035835272)
 This game is based on the Coronavirus outbreak in the world today. In this game, players will play the role of the leader of the World Health Organization (WHO). Players 
 need to make the best choice according to their own ideas to reduce the infection rate and death rate of Coronavirus, and finally save the world.
 
-Starting status:
-Initial funding: 100billion
-Initial support rate: 100%
-Initial Infection rates: 50%
-Initial death rates: 1%
+Starting status: 
+Initial funding = 100billion; 
+Initial support rate = 100%; 
+Initial Infection rates = 50%;
+Initial death rates = 1%.
 
 Basic rules:  
 In each turn, the player have to choose to take a measure to combat COVID-19, which changes your supporting rate, your budget, and the rate of infection and death rate of the 
