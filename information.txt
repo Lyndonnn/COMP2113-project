@@ -1,0 +1,35 @@
+1.      Normal quarantine (accept flight, ship but need 14 days quarantine), 
+		a)	Support rate -10%
+		b)	Funding -10b
+		c)      Infection -5%
+2.      Absolute quarantine (no flight, ship, cars enter the country) 
+		a)	Support rate -30%
+		b)	Funding -20b
+		c)	Infection rate -20%
+3.	Distribution of disinfection materials
+		a)	Support rate +10%
+		b)	Funding -20b
+		c)	Infection rate -10%
+		d)	Death rate -0.1%
+4.	Organize medical teams for rescue
+		a)	Support rate +10%
+		b)	Funding -20b
+		c)	Death rate -0.3%
+5.	Focus on vaccine development
+		a)	Funding -40b
+		b)	Support rate +10%
+		c)	Infection rate -20%
+		d)	Death rate -0.1%
+6.	Fake news to exaggerate your contributions
+		a)	Funding +20b
+		b)	Support rate +10%
+		c)	Infection rate +10%
+7.	Raise donations worldwide
+		a)	Funding +20b
+		b)	Support rate -20%
+8.	Additional assistance to poor areas
+		a)	Support rate +10%
+		b)	Funding -20b
+		c)	Death rate -0.3%
+		d)	Infection rate -10%
+
