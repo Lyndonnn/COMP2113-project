@@ -10,7 +10,7 @@ struct Day {
 	Day *next;
 };
 
-void dataoutput(*&head);
+void dataoutput(Day *&head);
 
 
 #endif
