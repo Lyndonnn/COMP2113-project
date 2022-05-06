@@ -23,18 +23,18 @@ void dataoutput(Day *&head) {
 	int count = 0;
 	Day *traverse = head;
 	// print column names
-	fout << "Day" << "   " << "Funding" << "   " << "Support Rate"
-	     << "   " << "Infection Rate" << "   " << "Death Rate" << endl;
+	fout << "Day" << "     " << "Funding" << "     " << "Support Rate"
+	     << "     " << "Infection Rate" << "     " << "Death Rate" << endl;
 	// print daily information sequentially
 	while (traverse->next != NULL) {
-		fout << setw(3) << count << "   " << setw(8) << traverse->fund << "   "
-		     << setw(15) << traverse->support << "   " << setw(17) <<
-		     traverse->infection << "   " << setw(19) << traverse->death << endl;
+		fout << setw(3) << count << setw(12) << traverse->fund << setw(17) <<
+		traverse->support << setw(19) << traverse->infection << setw(15) <<
+		traverse->death << endl;
 		count++;
 		traverse = traverse->next;
 	}
-	fout << setw(3) << count << "   " << setw(8) << traverse->fund << "   "
-	     << setw(15) << traverse->support << "   " << setw(17) <<
-	     traverse->infection << "   " << setw(19) << traverse->death << endl;
+	fout << setw(3) << count << setw(12) << traverse->fund << setw(17) <<
+	traverse->support << setw(19) << traverse->infection << setw(15) <<
+	traverse->death << endl;
 	fout.close();
 }
