@@ -40,8 +40,7 @@ choices and win the war against viruses!
 7. Save all the daily records till the end of the game
    - Requirement 3: A linked list is used to store all records
    - Requirement 4: Daily records are written and output to an external file
-   - Requirement 5:Program codes in multiple file
-                   Tentative list of files: (1) Covidgame (main game file) (2) getgamerank.cpp (print the leaderboard) (3) getgamerank.h 
+   - Requirement 5: The codes for file output is in another file 'data_output.cpp'
 
 ## Non-standard C/C++ libraries
 Not used.
@@ -49,10 +48,10 @@ Not used.
 ## Compilation and execution instructions
 In each turn,
 1. The main menu is displayed. Please enter 1,2,3, or 0, for different actions
-   - If you want to take the measure, enter 1
+   - If you want to take a measure, enter 1
    - If you want to view your current status, enter 2
-   - If you want to know how each measure changes your daily status, enter 3 (Note that this only contains basic information)
+   - If you want to know how each measure changes your daily status, enter 3 (Note that only basic changes are included)
    - If you want to exit, enter 0
-2. If '1' is entered, the screen will show (1) the random event of that day, and (2) the 7 measures that you can take. Please enter 1-7 for the measure you plan to take. (Note that the random event may further change your daily status, so the ultimate changes can be different from those provided in the basic infomation)
+2. If '1' is entered, the screen will show (1) the random event of that day, and (2) the 7 measures that you can take. Please enter 1-7 for the measure you plan to take. (Note that the random event may further change your daily status, so the ultimate changes can be different from those provided in the main menu 3)
 
 Repeat the steps mentioned above until you either win or lose the game. 
