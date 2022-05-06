@@ -423,6 +423,7 @@ int main() {
 			cout << "----------------------------------------------------------------------------------------------" << endl;
 			value.fund -= 100;
 			value.support -= 100;
+			break;
 		}
 		if (value.flag == true) {
 			value.potential += 20;
@@ -430,7 +431,7 @@ int main() {
 		}
 	}
 
-	dataoutput();
+	dataoutput(*&head);
 
 	return 0;
 }
