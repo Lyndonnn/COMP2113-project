@@ -9,15 +9,6 @@
 
 using namespace std;
 
-struct Day {
-	int fund;
-	int support;
-	int infection;
-	double death;
-	int potential;
-	bool flag;
-	Day *next;
-};
 
 
 // print the status in the previous day
