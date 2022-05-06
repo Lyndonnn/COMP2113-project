@@ -377,7 +377,7 @@ int main() {
 				break;
 			case 3: // if the player want to search for background information
 				cout << "----------------------------------------------------------------------------------------------" << endl;
-				background();
+				background_input();
 				cout << "----------------------------------------------------------------------------------------------" << endl;
 				break;
 			case 0:
