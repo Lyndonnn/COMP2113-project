@@ -18,7 +18,7 @@ struct Day {
 	Day *next;
 };
 // output daily information to file
-void dataoutput() {
+void dataoutput(Day *&head) {
 // output daily information to file
 	ofstream fout;
 	fout.open("dailyInfo.txt");
