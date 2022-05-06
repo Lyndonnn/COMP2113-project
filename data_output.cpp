@@ -10,7 +10,7 @@ using namespace std;
 
 // output daily information to file
 void dataoutput(Day *&head) {
-// output daily information to file
+
 	ofstream fout;
 	fout.open("dailyInfo.txt");
 
