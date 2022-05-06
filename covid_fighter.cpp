@@ -390,25 +390,28 @@ int main() {
 
 
 		}
+		// lose condition 1: the total number of days exceeds the limit
 		if (day >= 100) {
 			cout << "----------------------------------------------------------------------------------------------" << endl;
 			cout << "You fail to beat the COVID as you spend too much time." << endl;
 			cout << "----------------------------------------------------------------------------------------------" << endl;
 		}
-		// success condition
+		// winning condition
 		if (value.infection <= 0 || value.death <= 0) {
 			cout << "YOU HAVE BEAT THE COVID !!!" << endl;
 			cout << "----------------------------------------------------------------------------------------------" << endl;
 			break;
 		}
-		// lose condition 1
+		// lose condition 2: some statistics exceed the pre-specified limit
+		// For special cases where winning condition and lose condition are met simultaneously, 
+		// we make judgements based on the winning conditions first, which is reflected in the order of the if statements
 		if (value.support <= 0 || value.infection >= 100 || value.fund <= 0 || value.death >= 5) {
 			cout << "----------------------------------------------------------------------------------------------" << endl;
 			cout << "You Fail To Beat The COVID" << endl;
 			cout << "----------------------------------------------------------------------------------------------" << endl;
 			break;
 		}
-		// lose condition 2: too much fake news produced
+		// lose condition 3: too much fake news produced
 		if (value.potential >= 100) {
 			cout << "You get caught spreading fake news, people lose trust in you" << endl;
 			cout << "----------------------------------------------------------------------------------------------" << endl;
@@ -416,6 +419,7 @@ int main() {
 			value.support -= 100;
 			break;
 		}
+		// once a piece of fake news is produced, the potential of being caught will increase every day afterwards
 		if (value.flag == true) {
 			value.potential += 20;
 
