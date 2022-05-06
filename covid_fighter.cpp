@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
-#include <time.h>
+#include <ctime>
 #include <fstream>
 #include <iomanip>
 #include "background_input.h"
@@ -73,7 +73,6 @@ int actionMenu(int day) {
 // generate a random number from 1 to 7
 int randomNumber() {
 	int a;
-	srand((unsigned)time(NULL));
 	a = rand() % 7 + 1;
 	return a;
 }
@@ -367,6 +366,8 @@ int main() {
 	value.potential = 0;
 	value.flag = false;
 	addDay(head, tail, value); // add initial status to the linked list
+	
+	srand(time(NULL));
 	while (day < 100) {
 		int action = actionMenu(day);
 
