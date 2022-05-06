@@ -8,15 +8,6 @@
 //#include "covid.h"
 using namespace std;
 
-struct Day {
-	int fund;
-	int support;
-	int infection;
-	double death;
-	int potential;
-	bool flag;
-	Day *next;
-};
 // output daily information to file
 void dataoutput(Day *&head) {
 // output daily information to file
@@ -27,7 +18,7 @@ void dataoutput(Day *&head) {
 		cout << "Error in file opening!" << endl;
 		exit(1);
 	}
-	Day *head = NULL;
+
 
 	int count = 0;
 	Day *traverse = head;
