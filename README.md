@@ -18,7 +18,7 @@ In each turn, the player have to choose to take a measure to combat COVID-19, wh
 virus. There are also 'breaking news' that may be triggered each turn, and how the player make choices accordingly will further affect the aforementioned four statistics, either in a favorable or disadvantageous manner. 
 
 The player wins the game if (1) the infection rate drops to zero, or (2) the death rate drops to zero. The player loses the 
-game if (1) the supporting rate becomes zero, or (2) the budget becomes zero, or (3) the number of turns reaches 100. In addition, choosing the inethical measure 'Spread fake news to exaggerate your contributions' may also lead to a failure in the future (This is unknown to the palyer). 
+game if (1) the supporting rate becomes zero, or (2) the budget becomes zero, or (3) the infection rate reaches 100%, or (4) the death rate reaches 5%, or (5) the number of days reaches 100. In addition, choosing the inethical measure 'Spread fake news to exaggerate your contributions' may also lead to a failure in the future (However, this rule is unknown to the palyer). 
 
 So, optimize your 
 choices and win the war against viruses!
@@ -43,7 +43,7 @@ choices and win the war against viruses!
    - Requirement 5:Program codes in multiple file
                    Tentative list of files: (1) Covidgame (main game file) (2) getgamerank.cpp (print the leaderboard) (3) getgamerank.h 
 
-## non-standard C/C++ libraries
+## Non-standard C/C++ libraries
 Not used.
 
 ## Compilation and execution instructions
