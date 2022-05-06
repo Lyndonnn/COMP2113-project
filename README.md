@@ -23,7 +23,7 @@ game if (1) the supporting rate becomes zero, or (2) the budget becomes zero, or
 So, optimize your 
 choices and win the war against viruses!
 
-## Features to be implemented
+## Features implemented
 1. Print the up-to-date status
    - Requirement 2: Struct is used to store the daily status
 2. Print the main menu and read the player's choice
