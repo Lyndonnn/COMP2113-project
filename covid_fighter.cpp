@@ -10,7 +10,7 @@
 using namespace std;
 
 // delete the head node from a linked list
-void delete_head( Node *&head) {
+void delete_head( Day *&head) {
 	if (head != NULL) {
 		Node *p = head;
 		head = head->next;
@@ -19,7 +19,7 @@ void delete_head( Node *&head) {
 }
 
 // free an entire linked list
-void delete_list(Node *&head) {
+void delete_list(Day *&head) {
 	while ( head != NULL ) {
 		delete_head(head);
 	}
