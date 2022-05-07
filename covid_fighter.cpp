@@ -9,7 +9,21 @@
 
 using namespace std;
 
+// delete the head node from a linked list
+void delete_head( Node *&head) {
+	if (head != NULL) {
+		Node *p = head;
+		head = head->next;
+		delete p;
+	}
+}
 
+// free an entire linked list
+void delete_list(Node *&head) {
+	while ( head != NULL ) {
+		delete_head(head);
+	}
+}
 
 // print the status in the previous day
 void printDay(Day &head) {
@@ -427,6 +441,8 @@ int main() {
 	}
 
 	dataoutput(*&head);
+	delete_list(head);
+	delete_list(traverse);
 
 	return 0;
 }
