@@ -8,7 +8,7 @@
 #include "data_output.h"
 
 using namespace std;
-bool isnum(string str) {
+bool isNum(string str) {
 	for (int i = 0; i < str.size(); i++) {
 		int temp = (int) str[i];
 		if (temp >= 48 && temp <= 57) {
@@ -45,17 +45,7 @@ void printDay(Day &head) {
 	cout << "******" << " Death rate (in %): " << setw(13) << head.death  << " ******" << endl;
 	cout << endl;
 }
-bool isnum(string str) {
-	for (int i = 0; i < str.size(); i++) {
-		int temp = (int) str[i];
-		if (temp >= 48 && temp <= 57) {
-			continue;
-		} else {
-			return false;
-		}
-	}
-	return true;
-}
+
 
 // add a new daily status to the tail of the linked list
 void addDay(Day *&head, Day *&tail, Day &info) {
@@ -94,7 +84,7 @@ int actionMenu(int day) {
 	cout << "----------------------------------------------------------------------------------------------" << endl;
 	// read player's action
 	cin >> action;
-	if (isnum(action) && action.size() == 1 ) {
+	if (isNum(action) && action.size() == 1 ) {
 		temp = int(action[0]);
 		temp -= 48;
 		return temp;
@@ -128,7 +118,7 @@ int chooseAction(Day &info) {
 	cout << "----------------------------------------------------------------------------------------------" << endl;
 	cin >> a;
 	cout << "----------------------------------------------------------------------------------------------" << endl;
-	if (isnum(a) && a.size() == 1 ) {
+	if (isNum(a) && a.size() == 1 ) {
 		temp = int(a[0]);
 		temp -= 48;
 	} else {
@@ -144,7 +134,7 @@ int chooseAction(Day &info) {
 			cout << "----------------------------------------------------------------------------------------------" << endl;
 			cin >> b;
 			cout << "----------------------------------------------------------------------------------------------" << endl;
-			if (isnum(b) && b.size() == 1 ) {
+			if (isNum(b) && b.size() == 1 ) {
 				temp1 = int(b[0]);
 				temp1 -= 48;
 			} else {
