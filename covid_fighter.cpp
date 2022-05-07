@@ -8,6 +8,8 @@
 #include "data_output.h"
 
 using namespace std;
+
+// return a boolean value of whether an input from user is of type integer
 bool isNum(string str) {
 	for (int i = 0; i < str.size(); i++) {
 		int temp = (int) str[i];
@@ -19,6 +21,8 @@ bool isNum(string str) {
 	}
 	return true;
 }
+
+
 // delete the head node from a linked list
 void delete_head( Day *&head) {
 	if (head != NULL) {
@@ -27,6 +31,7 @@ void delete_head( Day *&head) {
 		delete p;
 	}
 }
+
 
 // free an entire linked list
 void delete_list(Day *&head) {
@@ -66,11 +71,13 @@ void addDay(Day *&head, Day *&tail, Day &info) {
 	}
 }
 
-// display all three actions
-// obtain the action chosen from the player
+
+// display all three actions in the main menu
+// obtain the action chosen by the player
 int actionMenu(int day) {
 	string action;
-	int temp;
+	int temp; // convert the string input into an integer
+	
 	// print action menu
 	cout << "********************************" << endl;
 	cout << "************ DAY " << setw(2) << day << " ************" << endl;
@@ -82,6 +89,7 @@ int actionMenu(int day) {
 	cout << "Enter 3 --------> Show Background Information" << endl;
 	cout << "Enter 0 --------> Quit (your current status will not be recorded)" << endl;
 	cout << "----------------------------------------------------------------------------------------------" << endl;
+	
 	// read player's action
 	cin >> action;
 	if (isNum(action) && action.size() == 1 ) {
@@ -93,6 +101,7 @@ int actionMenu(int day) {
 	}
 }
 
+
 // generate a random number from 1 to 7
 int randomNumber() {
 	int a;
@@ -100,10 +109,11 @@ int randomNumber() {
 	return a;
 }
 
+
 // print all seven measures that can be taken
 // obtain the measure chosen by the player
 int chooseAction(Day &info) {
-	int temp1, temp;
+	int temp1, temp; //  convert strings inputs into integers
 	string a, b;
 	// print the measures
 	cout << "Please choose the action you want to take" << endl;
@@ -254,6 +264,7 @@ int chooseAction(Day &info) {
 	return 0;
 }
 
+
 // generate a random event
 void randomEvent(Day &info) {
 	int ran, temp;
@@ -385,8 +396,8 @@ void randomEvent(Day &info) {
 			}
 	}
 	if (temp == 5) {
-		info.potential += 20;
-		info.flag = true;
+		info.potential += 20; // increase the potential of being caught by 20%
+		info.flag = true; // turn the flag for 'having chosen to spread fake news' into 'true'
 
 	}
 
@@ -468,14 +479,16 @@ int main() {
 			value.support -= 100;
 			break;
 		}
-		// once a piece of fake news is produced, the potential of being caught will increase every day afterwards
+		// once a piece of fake news is produced, the potential of being caught will increase automatically every day afterwards
 		if (value.flag == true) {
 			value.potential += 20;
 
 		}
 	}
-
+	
+	// output game history to file
 	dataoutput(*&head);
+	// free the linked list
 	delete_list(head);
 
 	return 0;
