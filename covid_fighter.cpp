@@ -428,7 +428,7 @@ int main() {
 		}
 		// lose condition 3: too much fake news produced
 		if (value.potential >= 100) {
-			cout << "You get caught spreading fake news, people lose trust in you" << endl;
+			cout << "You get caught spreading fake news, people lose trust in you, You Fail To Beat The COVID !" << endl;
 			cout << "----------------------------------------------------------------------------------------------" << endl;
 			value.fund -= 100;
 			value.support -= 100;
