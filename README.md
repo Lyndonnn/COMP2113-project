@@ -40,7 +40,11 @@ choices and win the war against viruses!
 7. Save all the daily records till the end of the game
    - Requirement 3: A linked list is used to store all records
    - Requirement 4: Daily records are written and output to an external file
-   - Requirement 5: additional programs included - 'data_output.cpp','background_input.cpp'
+   - Requirement 5: additional program files included - "data_output.cpp","background_input.cpp", "data_output.h", "background_input.h".
+8. Some proper in-code documentation
+   - Requirement 7: In-code documentation
+9. Meaningful names of variables in the code and proper indentation
+   - Requirement 6: Proper indentation and naming styles
 
 ## Non-standard C/C++ libraries
 Not used.
