@@ -1,0 +1,242 @@
+********************************
+************ DAY  0 ************
+********************************
+Please choose your action: 
+----------------------------------------------------------------------------------------------
+Enter 1 --------> Measures
+Enter 2 --------> Show Status
+Enter 3 --------> Show Background Information
+Enter 0 --------> Quit (your current status will not be recorded)
+----------------------------------------------------------------------------------------------
+3 (input)
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+You are the leader of WHO, see whether you can beat the COVID. Here is the information
+----------------------------------------------------------------------------------------------
+1.      Normal quarantine (accept flight, ship but need 14 days quarantine), 
+		a)	Support rate -10%
+		b)	Funding -10b
+		c)      Infection -5%
+2.      Absolute quarantine (no flight, ship, cars enter the country) 
+		a)	Support rate -30%
+		b)	Funding -20b
+		c)	Infection rate -20%
+3.	Distribution of disinfection materials
+		a)	Support rate +10%
+		b)	Funding -20b
+		c)	Infection rate -10%
+		d)	Death rate -0.1%
+4.	Organize medical teams for rescue
+		a)	Support rate +10%
+		b)	Funding -20b
+		c)	Death rate -0.3%
+5.	Focus on vaccine development
+		a)	Funding -40b
+		b)	Support rate +10%
+		c)	Infection rate -20%
+		d)	Death rate -0.1%
+6.	Fake news to exaggerate your contributions
+		a)	Funding +20b
+		b)	Support rate +10%
+		c)	Infection rate +10%
+7.	Raise donations worldwide
+		a)	Funding +20b
+		b)	Support rate -20%
+8.	Additional assistance to poor areas
+		a)	Support rate +10%
+		b)	Funding -20b
+		c)	Death rate -0.3%
+		d)	Infection rate -10%
+
+----------------------------------------------------------------------------------------------
+********************************
+************ DAY  0 ************
+********************************
+Please choose your action: 
+----------------------------------------------------------------------------------------------
+Enter 1 --------> Measures
+Enter 2 --------> Show Status
+Enter 3 --------> Show Background Information
+Enter 0 --------> Quit (your current status will not be recorded)
+----------------------------------------------------------------------------------------------
+2 (input)
+----------------------------------------------------------------------------------------------
+
+****** Total funding (in $billion): 100 ******
+****** Support rate (in %):         100 ******
+****** Infection rate (in %):        50 ******
+****** Death rate (in %):             1 ******
+
+----------------------------------------------------------------------------------------------
+********************************
+************ DAY  0 ************
+********************************
+Please choose your action: 
+----------------------------------------------------------------------------------------------
+Enter 1 --------> Measures
+Enter 2 --------> Show Status
+Enter 3 --------> Show Background Information
+Enter 0 --------> Quit (your current status will not be recorded)
+----------------------------------------------------------------------------------------------
+1 (input)
+----------------------------------------------------------------------------------------------
+Breaking News: The virus mutated again.
+----------------------------------------------------------------------------------------------
+Please choose the action you want to take
+----------------------------------------------------------------------------------------------
+Enter 1 ---------> Tightening quarantine policy
+Enter 2 ---------> Distribute free disinfection materials
+Enter 3 ---------> Organize medical teams for rescue
+Enter 4 ---------> Develop up-to-date vaccine
+Enter 5 ---------> Spread fake news to exaggerate your contributions
+Enter 6 ---------> Raise donations worldwide
+Enter 7 ---------> Provide additional assistance to poor areas
+----------------------------------------------------------------------------------------------
+1 (input)
+----------------------------------------------------------------------------------------------
+Enter 1 ---> Normal quarantine (accept flight, ship but need 14 days quarantine)
+Enter 2 ---> Absolute quarantine (no flight, ship, cars enter the country) 
+----------------------------------------------------------------------------------------------
+2 (input)
+----------------------------------------------------------------------------------------------
+The mutated virus cannot be dealt with by existing medical measures
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+********************************
+************ DAY  1 ************
+********************************
+Please choose your action: 
+----------------------------------------------------------------------------------------------
+Enter 1 --------> Measures
+Enter 2 --------> Show Status
+Enter 3 --------> Show Background Information
+Enter 0 --------> Quit (your current status will not be recorded)
+----------------------------------------------------------------------------------------------
+1 (input)
+----------------------------------------------------------------------------------------------
+News: The epidemic prevention work is progressing step by step.
+----------------------------------------------------------------------------------------------
+Please choose the action you want to take
+----------------------------------------------------------------------------------------------
+Enter 1 ---------> Tightening quarantine policy
+Enter 2 ---------> Distribute free disinfection materials
+Enter 3 ---------> Organize medical teams for rescue
+Enter 4 ---------> Develop up-to-date vaccine
+Enter 5 ---------> Spread fake news to exaggerate your contributions
+Enter 6 ---------> Raise donations worldwide
+Enter 7 ---------> Provide additional assistance to poor areas
+----------------------------------------------------------------------------------------------
+2 (input)
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+********************************
+************ DAY  2 ************
+********************************
+Please choose your action: 
+----------------------------------------------------------------------------------------------
+Enter 1 --------> Measures
+Enter 2 --------> Show Status
+Enter 3 --------> Show Background Information
+Enter 0 --------> Quit (your current status will not be recorded)
+----------------------------------------------------------------------------------------------
+1 (input)
+----------------------------------------------------------------------------------------------
+Breaking News: The holiday is coming and people are eager to travel.
+----------------------------------------------------------------------------------------------
+Please choose the action you want to take
+----------------------------------------------------------------------------------------------
+Enter 1 ---------> Tightening quarantine policy
+Enter 2 ---------> Distribute free disinfection materials
+Enter 3 ---------> Organize medical teams for rescue
+Enter 4 ---------> Develop up-to-date vaccine
+Enter 5 ---------> Spread fake news to exaggerate your contributions
+Enter 6 ---------> Raise donations worldwide
+Enter 7 ---------> Provide additional assistance to poor areas
+----------------------------------------------------------------------------------------------
+1 (input)
+----------------------------------------------------------------------------------------------
+Enter 1 ---> Normal quarantine (accept flight, ship but need 14 days quarantine)
+Enter 2 ---> Absolute quarantine (no flight, ship, cars enter the country) 
+----------------------------------------------------------------------------------------------
+1 (input)
+----------------------------------------------------------------------------------------------
+Long periods of quarantine have discouraged people from travelling
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+********************************
+************ DAY  3 ************
+********************************
+Please choose your action: 
+----------------------------------------------------------------------------------------------
+Enter 1 --------> Measures
+Enter 2 --------> Show Status
+Enter 3 --------> Show Background Information
+Enter 0 --------> Quit (your current status will not be recorded)
+----------------------------------------------------------------------------------------------
+2 (input)
+----------------------------------------------------------------------------------------------
+
+****** Total funding (in $billion):  50 ******
+****** Support rate (in %):          70 ******
+****** Infection rate (in %):        20 ******
+****** Death rate (in %):           1.9 ******
+
+----------------------------------------------------------------------------------------------
+********************************
+************ DAY  3 ************
+********************************
+Please choose your action: 
+----------------------------------------------------------------------------------------------
+Enter 1 --------> Measures
+Enter 2 --------> Show Status
+Enter 3 --------> Show Background Information
+Enter 0 --------> Quit (your current status will not be recorded)
+----------------------------------------------------------------------------------------------
+1 (input)
+----------------------------------------------------------------------------------------------
+News: The epidemic prevention work is progressing step by step.
+----------------------------------------------------------------------------------------------
+Please choose the action you want to take
+----------------------------------------------------------------------------------------------
+Enter 1 ---------> Tightening quarantine policy
+Enter 2 ---------> Distribute free disinfection materials
+Enter 3 ---------> Organize medical teams for rescue
+Enter 4 ---------> Develop up-to-date vaccine
+Enter 5 ---------> Spread fake news to exaggerate your contributions
+Enter 6 ---------> Raise donations worldwide
+Enter 7 ---------> Provide additional assistance to poor areas
+----------------------------------------------------------------------------------------------
+6 (input)
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+********************************
+************ DAY  4 ************
+********************************
+Please choose your action: 
+----------------------------------------------------------------------------------------------
+Enter 1 --------> Measures
+Enter 2 --------> Show Status
+Enter 3 --------> Show Background Information
+Enter 0 --------> Quit (your current status will not be recorded)
+----------------------------------------------------------------------------------------------
+1 (input)
+----------------------------------------------------------------------------------------------
+Breaking News: The virus mutated again.
+----------------------------------------------------------------------------------------------
+Please choose the action you want to take
+----------------------------------------------------------------------------------------------
+Enter 1 ---------> Tightening quarantine policy
+Enter 2 ---------> Distribute free disinfection materials
+Enter 3 ---------> Organize medical teams for rescue
+Enter 4 ---------> Develop up-to-date vaccine
+Enter 5 ---------> Spread fake news to exaggerate your contributions
+Enter 6 ---------> Raise donations worldwide
+Enter 7 ---------> Provide additional assistance to poor areas
+----------------------------------------------------------------------------------------------
+4 (input)
+----------------------------------------------------------------------------------------------
+The newly developed vaccine is very effective
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+YOU HAVE BEAT THE COVID !!!
+----------------------------------------------------------------------------------------------
