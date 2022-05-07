@@ -373,7 +373,7 @@ int main() {
 	addDay(head, tail, value); // add initial status to the linked list
 	
 	srand(time(NULL));
-	while (day < 100) {
+	while (day < 10) {
 		int action = actionMenu(day);
 
 		switch (action) {
@@ -405,7 +405,7 @@ int main() {
 
 		}
 		// lose condition 1: the total number of days exceeds the limit
-		if (day >= 100) {
+		if (day >= 10) {
 			cout << "----------------------------------------------------------------------------------------------" << endl;
 			cout << "You fail to beat the COVID as you spend too much time." << endl;
 			cout << "----------------------------------------------------------------------------------------------" << endl;
