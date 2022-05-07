@@ -8,7 +8,17 @@
 #include "data_output.h"
 
 using namespace std;
-
+bool isnum(string str) {
+	for (int i = 0; i < str.size(); i++) {
+		int temp = (int) str[i];
+		if (temp >= 48 && temp <= 57) {
+			continue;
+		} else {
+			return false;
+		}
+	}
+	return true;
+}
 // delete the head node from a linked list
 void delete_head( Day *&head) {
 	if (head != NULL) {
@@ -35,6 +45,17 @@ void printDay(Day &head) {
 	cout << "******" << " Death rate (in %): " << setw(13) << head.death  << " ******" << endl;
 	cout << endl;
 }
+bool isnum(string str) {
+	for (int i = 0; i < str.size(); i++) {
+		int temp = (int) str[i];
+		if (temp >= 48 && temp <= 57) {
+			continue;
+		} else {
+			return false;
+		}
+	}
+	return true;
+}
 
 // add a new daily status to the tail of the linked list
 void addDay(Day *&head, Day *&tail, Day &info) {
@@ -58,7 +79,8 @@ void addDay(Day *&head, Day *&tail, Day &info) {
 // display all three actions
 // obtain the action chosen from the player
 int actionMenu(int day) {
-	int action;
+	string action;
+	int temp;
 	// print action menu
 	cout << "********************************" << endl;
 	cout << "************ DAY " << setw(2) << day << " ************" << endl;
@@ -72,8 +94,13 @@ int actionMenu(int day) {
 	cout << "----------------------------------------------------------------------------------------------" << endl;
 	// read player's action
 	cin >> action;
-
-	return action;
+	if (isnum(action) && action.size() == 1 ) {
+		temp = int(action[0]);
+		temp -= 48;
+		return temp;
+	} else {
+		return 11;
+	}
 }
 
 // generate a random number from 1 to 7
@@ -86,7 +113,8 @@ int randomNumber() {
 // print all seven measures that can be taken
 // obtain the measure chosen by the player
 int chooseAction(Day &info) {
-	int a, b;
+	int temp1, temp;
+	string a, b;
 	// print the measures
 	cout << "Please choose the action you want to take" << endl;
 	cout << "----------------------------------------------------------------------------------------------" << endl;
@@ -100,15 +128,31 @@ int chooseAction(Day &info) {
 	cout << "----------------------------------------------------------------------------------------------" << endl;
 	cin >> a;
 	cout << "----------------------------------------------------------------------------------------------" << endl;
+	if (isnum(a) && a.size() == 1 ) {
+		temp = int(a[0]);
+		temp -= 48;
+	} else {
+		cout << "Operation invalid, you waste one day" << endl;
+		cout << "----------------------------------------------------------------------------------------------" << endl;
+		return 0;
+	}
 	// update funding, support, infection rate, and death rate based on the measure
-	switch (a) {
+	switch (temp) {
 		case 1:
 			cout << "Enter 1 ---> Normal quarantine (accept flight, ship but need 14 days quarantine)" << endl;
 			cout << "Enter 2 ---> Absolute quarantine (no flight, ship, cars enter the country) " << endl;
 			cout << "----------------------------------------------------------------------------------------------" << endl;
 			cin >> b;
 			cout << "----------------------------------------------------------------------------------------------" << endl;
-			if (b == 1) {
+			if (isnum(b) && b.size() == 1 ) {
+				temp1 = int(b[0]);
+				temp1 -= 48;
+			} else {
+				cout << "Operation invalid, you waste one day" << endl;
+				cout << "----------------------------------------------------------------------------------------------" << endl;
+				return 0;
+			}
+			if (temp1 == 1) {
 				info.support -= 10;
 				info.fund -= 10;
 				info.infection -= 5;
@@ -120,7 +164,7 @@ int chooseAction(Day &info) {
 				}
 				return 10;
 			}
-			if (b == 2) {
+			if (temp1 == 2) {
 				info.support -= 30;
 				info.fund -= 20;
 				info.infection -= 20;
